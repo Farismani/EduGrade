@@ -135,3 +135,5 @@ Add JSON files under `backend/testcases` named by assignment ID, for example:
 - `GET /api/submissions?adminKey=<key>`
 - `GET /api/submission/<id>?adminKey=<key>`
 - `GET /api/report/<id>?adminKey=<key>`
+
+deployed link: https://auto-grader-frontend.onrender.com/
