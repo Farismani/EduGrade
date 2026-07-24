@@ -1,0 +1,26 @@
+services:
+  - type: web_service
+    name: auto-grader-backend
+    env: python
+    plan: free
+    branch: main
+    buildCommand: pip install -r requirements.txt
+    startCommand: python backend/server.py
+    envVars:
+      - key: ADMIN_KEY
+        value: admin123
+      - key: USE_LOCAL_PYTHON
+        value: "false"
+      - key: PORT
+        value: "5000"
+
+  - type: web_service
+    name: auto-grader-frontend
+    env: python
+    plan: free
+    branch: main
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run frontend/streamlit_app.py --server.port 3000 --server.enableCORS false
+    envVars:
+      - key: API_URL
+        value: "https://auto-grader-backend.onrender.com"
