@@ -1,5 +1,5 @@
 services:
-  - type: web_service
+  - type: web
     name: auto-grader-backend
     env: python
     plan: free
@@ -14,7 +14,7 @@ services:
       - key: PORT
         value: "5000"
 
-  - type: web_service
+  - type: web
     name: auto-grader-frontend
     env: python
     plan: free
